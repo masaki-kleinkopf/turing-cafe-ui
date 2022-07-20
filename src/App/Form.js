@@ -15,8 +15,8 @@ class Form extends React.Component {
     handleClick = (event) => {
         event.preventDefault()
         const { name, date, time, number} = this.state;
+        const newResy = {id:Date.now(),name:name, date:date, time:time, number:parseInt(number)}
         if (name && date && time && number){
-            const newResy = {id:Date.now(),name:name, date:date, time:time, number:parseInt(number)}
             this.props.addResy(newResy)
         }
     }
