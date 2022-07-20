@@ -6,10 +6,26 @@ describe("main view",() => {
         cy.contains("h1","Turing Cafe Reservations")
     })
 
-    it("should have correct reservations", () => {
-        cy.contains(".resy-container", "Christie")
-        cy.contains(".resy-container", "Leta")
-        cy.contains(".resy-container", "Pam")
+    it("should have reservations grid",() => {
+        cy.get(".resy-container")
+        .contains("Christie")
+        cy.get(".resy-container")
+        .contains("Travis")
+    })
+
+    it("should have correct reservation", () => {
+        cy.get(".resy").first().contains("Christie")
+        cy.get(".resy").first().contains("12/29")
+        cy.get(".resy").first().contains("7:00")
+        cy.get(".resy").first().contains("12")
+       
+    })
+
+    it("should have another correct reservation", () => {
+        cy.get(".resy").last().contains("Brittany")
+        cy.get(".resy").last().contains("9/9")
+        cy.get(".resy").last().contains("7:30")
+        cy.get(".resy").last().contains("3")
     })
 
     it("should have a background img", () => {
