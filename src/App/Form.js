@@ -29,7 +29,7 @@ class Form extends React.Component {
             <input tyoe="text" placeholder="Date (mm/dd)"  name="date" value = {this.state.data} onChange={this.handleChange} />
             <input tyoe="text" placeholder="Time"  name="time" value = {this.state.time} onChange={this.handleChange} />
             <input tyoe="text" placeholder="Number of Guests"  name="number" value = {this.state.number} onChange={this.handleChange} />
-            <button onClick = {this.handleClick}>Make a reservation</button>
+            <button name="submit" onClick = {this.handleClick}>Make a reservation</button>
           </form>
         </div>
         )
