@@ -45,6 +45,21 @@ describe("main view",() => {
         .type("14")
         .should("have.value","14")
     })
+
+    it("should not be able to submit form without all inputs entered", () => {
+        cy.get('input[name="name"]')
+        .type("Masaki")
+        cy.get('input[name="date"]')
+        .type("12/01")
+        cy.get('input[name="time"]')
+        .type("4:00")
+        cy.get(".form-message").contains("fill all forms to make a reservation")
+        cy.get('button[name="submit"]')
+        .click()
+        cy.contains("Masaki").should("not.exist")
+
+    })
+
     it("should be able to submit a form", () => {
         cy.get('input[name="name"]')
         .type("Masaki")
